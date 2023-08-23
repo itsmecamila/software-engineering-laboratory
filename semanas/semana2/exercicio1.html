@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <h1>Cadastro de Valores</h1>
+
+    <form id="inputForm">
+        <label for="value">Novo Valor:</label>
+        <input type="text" id="value" name="value" required>
+        <button type="button" onclick="addValue()">Adicionar</button>
+    </form>
+
+    <h2>Valores Cadastrados em Ordem Alfabética:</h2>
+    <ul id="valueList">
+
+    </ul>
+
+    <script>
+        const valuesArray = [];
+
+        function addValue() {
+            const inputValue = document.getElementById("value").value;
+            valuesArray.push(inputValue);
+            valuesArray.sort((a, b) => a < b ? -1 : 1); 
+
+            updateValueList();
+            document.getElementById("value").value = "";
+        }
+
+        function updateValueList() {
+            const valueList = document.getElementById("valueList");
+            valueList.innerHTML = ""; 
+
+            valuesArray.forEach(value => {
+                const listItem = document.createElement("li");
+                listItem.textContent = value;
+                valueList.appendChild(listItem);
+            });
+        }
+    </script>
+
+    <a href="./semana2.html">Voltar</a>
+
+</body>
+</html>
