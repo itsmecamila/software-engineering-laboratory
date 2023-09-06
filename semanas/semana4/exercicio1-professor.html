@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Professor</title>
+</head>
+<body>
+    <form id="cadastroProfessor">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" id="nome" required> 
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="datanasc">Data Nascimento: </label>
+        <input type="date" name="datanasc" id="datanasc" required>
+
+        <label for="telfixo">Telefone Fixo: </label>
+        <input type="tel" name="telfixo" id="telfixo" required>
+
+        <label for="celular">Telefone Celular: </label>
+        <input type="tel" name="celular" id="celular" required>
+
+        <label for="professor">Professor</label>
+        <input type="radio" name="professor" id="professor" checked>
+
+        <label for="area">Área:</label>
+        <input type="text" name="area" id="area" required>
+
+        <label for="matricula">Matricula:</label>
+        <input type="text" name="matricula" id="matricula" required>
+
+        <label for="lattes">Lattes</label>
+        <input type="text" name="lattes" id="lattes" required>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Redefinir</button>
+
+    </form>
+
+    <div id="resultadoCP">
+
+    </div>
+    <script src="./exercicio1.js"></script>
+    
+</body>
+</html>
