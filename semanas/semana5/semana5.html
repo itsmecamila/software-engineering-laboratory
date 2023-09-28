@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreiro</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        let contador = 0;
+        let frase = "Vem ser Fatec!";
+        function Elemento({frase,posicao}){   
+            let atual = frase.substring(0,posicao);
+            return (
+                <>
+                <h1>{atual}</h1>
+                <p>:D</p>
+                </>
+            )
+        }   
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        function ExecutarRender(){
+            if(contador <= frase.length){
+                root.render(<Elemento  frase = "Vem ser Fatec!" posicao = {contador}/>);
+                contador += 1;
+            }
+        }
+
+        setInterval(ExecutarRender,200);
+
+    </script>
+    
+</body>
+</html>
